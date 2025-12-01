@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>WO AI NI=))))</title>
+<style>
+  :root{
+    --bg: #fff0f6;
+    --card-bg: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,245,250,0.9));
+    --pink1: #ff8fb1;
+    --pink2: #ff4d9e;
+    --shadow: rgba(255,77,158,0.12);
+    --text: #4a2b3a;
+  }
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: Inter, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(180deg, var(--bg), #ffeef8 60%);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+    color:var(--text);
+  }
+
+  .card{
+    width:100%;
+    max-width:720px;
+    background: var(--card-bg);
+    border-radius:20px;
+    padding:28px;
+    box-shadow: 0 14px 30px var(--shadow);
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .heart-svg{
+    width: clamp(80px, 15vw, 160px);
+    height: auto;
+    display:block;
+    margin: 0 auto 12px;
+    filter: drop-shadow(0 6px 18px rgba(255,77,158,0.12));
+  }
+
+  .floating-heart{
+    position:absolute;
+    width:24px;
+    height:24px;
+    pointer-events:none;
+    animation:floatUp 1.4s ease-out forwards;
+  }
+  @keyframes floatUp{
+    0%{transform:translateY(0) scale(1);opacity:1;}
+    100%{transform:translateY(-120px) scale(1.6);opacity:0;}
+  }
+
+  h1{
+    margin:6px 0 6px;
+    font-size: clamp(18px, 2.6vw, 28px);
+    font-weight:800;
+    color:#5a2940;
+  }
+
+  p.lead{
+    margin:0 0 16px;
+    font-size: clamp(13px, 1.8vw, 15px);
+    opacity:0.95;
+    line-height:1.45;
+    max-width:520px;
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .btn{
+    display:inline-block;
+    background: linear-gradient(90deg, var(--pink2), #ff6fb0);
+    color:#fff;
+    padding:10px 18px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:700;
+    border:none;
+    cursor:pointer;
+    box-shadow:0 8px 18px rgba(255,77,158,0.16);
+  }
+
+  .confession{
+    margin-top:16px;
+    display:none;
+    padding:14px 16px;
+    border-radius:12px;
+    background: linear-gradient(180deg, rgba(255,245,250,0.85), rgba(255,238,246,0.7));
+    border:1px solid rgba(255,77,158,0.06);
+    color:#5a2940;
+    font-size:15px;
+    line-height:1.5;
+  }
+
+  .row{
+    display:none;
+    justify-content:center;
+    gap:10px;
+    margin-top:12px;
+    flex-wrap:wrap;
+  }
+
+  #yesBtn{
+    background: linear-gradient(90deg,#ff4d9e,#ff83b9);
+  }
+  #noBtn{
+    background: linear-gradient(90deg,#ffbad3,#ffa7c9);
+    color:#5a2940;
+  }
+
+  @media(max-width:420px){
+    .card{padding:18px;}
+    .heart-svg{width: clamp(70px,20vw,120px);}
+  }
+</style>
+</head>
+<body>
+<main class="card">
+
+  <!-- SVG heart -->
+  <svg class="heart-svg" viewBox="0 0 24 24">
+    <defs><linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ff7aa6"/>
+      <stop offset="1" stop-color="#ff4d9e"/>
+    </linearGradient></defs>
+    <path fill="url(#g)" d="M12.001 21.35c-.4-.36-9.6-8.41-9.6-12.38C2.401 6.05 4.91 3.5 8.002 3.5c1.82 0 3.45.99 4.332 2.5C13.749 4.49 15.38 3.5 17.2 3.5c3.09 0 5.6 2.55 5.6 5.47 0 3.96-9.2 12.97-9.999 12.88-.1-.02-.2-.08-.3-.12z"/>
+  </svg>
+
+  <h1>Cho mình làm người đặc biệt nhé 💖</h1>
+  <p class="lead">Mình có điều muốn nói — nhấn nút bên dưới để nhận lời tỏ tình dễ thương này.</p>
+
+  <button class="btn" id="reveal">Nhấn để tỏ tình</button>
+
+  <div class="confession" id="text">
+    <strong>Xin chào 💕</strong><br>
+    Mình thích bạn — thích từ những điều nhỏ nhất: nụ cười, cách bạn hay quan tâm,
+    và cả những phút im lặng cùng nhau. Nếu bạn chịu, mình muốn được bên bạn,
+    chia sẻ mọi thứ và làm cho bạn cười mỗi ngày.
+  </div>
+
+  <div class="row" id="row1">
+    <button class="btn" id="yesBtn">Đồng ý 💗</button>
+    <button class="btn" id="noBtn">Không 😭</button>
+  </div>
+
+  <div class="row" id="row2">
+    <button class="btn" id="copyBtn">Sao chép lời nhắn</button>
+    <button class="btn" id="resetBtn" style="background:linear-gradient(90deg,#ffd1e8,#ff9ec6);color:#5a2940;">Làm lại</button>
+  </div>
+
+</main>
+
+<script>
+  const reveal = document.getElementById("reveal");
+  const text = document.getElementById("text");
+  const row1 = document.getElementById("row1");
+  const row2 = document.getElementById("row2");
+  const noBtn = document.getElementById("noBtn");
+  const yesBtn = document.getElementById("yesBtn");
+  const copyBtn = document.getElementById("copyBtn");
+  const resetBtn = document.getElementById("resetBtn");
+
+  function spawnHeart(){
+    const h = document.createElement("div");
+    h.className="floating-heart";
+    h.innerHTML="💗";
+    h.style.left=(window.innerWidth/2)+"px";
+    h.style.top=(window.innerHeight/2)+"px";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),1400);
+  }
+
+  reveal.addEventListener("click", ()=>{
+    spawnHeart();
+    text.style.display="block";
+    row1.style.display="flex";
+    row2.style.display="flex";
+    reveal.disabled=true;
+  });
+
+  function runAway(){
+    const x=Math.random()*(window.innerWidth-120);
+    const y=Math.random()*(window.innerHeight-120);
+    noBtn.style.position="fixed";
+    noBtn.style.left=x+"px";
+    noBtn.style.top=y+"px";
+  }
+  noBtn.addEventListener("mouseover",runAway);
+  noBtn.addEventListener("touchstart",runAway);
+
+  copyBtn.addEventListener("click", async ()=>{
+    try{
+      await navigator.clipboard.writeText(text.innerText);
+      copyBtn.textContent="Đã sao chép!";
+      setTimeout(()=>copyBtn.textContent="Sao chép lời nhắn",1500);
+    }catch(e){
+      copyBtn.textContent="Lỗi!";
+      setTimeout(()=>copyBtn.textContent="Sao chép lời nhắn",1500);
+    }
+  });
+
+  resetBtn.addEventListener("click", ()=>{
+    text.style.display="none";
+    row1.style.display="none";
+    row2.style.display="none";
+    reveal.disabled=false;
+  });
+
+  /* 👉 NÚT ĐỒNG Ý – CHUYỂN SANG TRANG love.html */
+  yesBtn.addEventListener("click", ()=>{
+    window.location.href = "love.html";
+  });
+</script>
+
+</body>
+</html>
